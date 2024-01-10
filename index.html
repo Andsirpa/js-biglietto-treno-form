@@ -25,9 +25,35 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="my-5">Titolo</h1>
-        <code class="fs-3" id="result">Esempio</code>
+    <div class="container py-5">
+
+        <h1 class="my-5 text-center">Stampa il tuo biglietto</h1>
+        <div class="d-flex">
+            <div>
+                <label for="">Nome</label>
+                <input type="text" class="form-control mb-3" id="user-name">
+            </div>
+
+            <div>
+                <label for="">Km</label>
+                <input type="text" class="form-control mb-3" id="distance">
+            </div>
+
+            <div>
+                <label for="">age</label>
+                <select class="form-select mb-3" id="user-age">
+                    <option value="minorenne">Minorenne</option>
+                    <option value="adulto">Adulto</option>
+                    <option value="over-65">Over 65</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" id="print-button">Stampa il biglietto</button>
+        </div>
+
+
     </div>
 
 
