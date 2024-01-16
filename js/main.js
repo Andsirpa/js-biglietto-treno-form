@@ -1,40 +1,37 @@
 
-const userNameInput = document.getElementById('user-name')
-const userName = userNameInput.value
-console.log(userName);
-
+const userNameInput = document.getElementById("user-name")
 const distanceInput = document.getElementById('distance')
-const distance = parseInt(distanceInput.value);
-console.log(distance);
-
 const userAgeInput = document.getElementById('user-age')
-const userAge = userAgeInput.value
-console.log(userAge);
-
 const printButton = document.getElementById('print-button')
-
 const resultElement = document.getElementById('result-element')
+
 const priceKm = 0.21
-const basePrice = distance * priceKm
-console.log(basePrice);
+const basePrice = parseInt(distanceInput * priceKm)
 
 let discount = 0
 
-if (userAge == 'Minorenne') {
-    discount = 20
-}
-
-if (userAge == 'Over65') {
-    discount = 40
-}
 
 const discountPrice = (basePrice * discount) / 100
 
 const finalPrice = basePrice - discountPrice
 
-const priceText = '€' + finalPrice
-console.log(priceText);
+const priceText = finalPrice + '€'
+
 
 printButton.addEventListener('click', function () {
+
+    const Name = userNameInput.value
+    const Age = userAgeInput.value
+
+    if (Age == 'minorenne') {
+        discount = 20
+    }
+
+    if (Age == 'Over-65') {
+        discount = 40
+    }
+
+
+
     resultElement.innerText = 'Il tuo biglietto costa' + priceText
 })
